@@ -61,7 +61,7 @@ class HomeScreen extends ConsumerWidget {
                 context.push(RouteNames.listing);
               },
               child: Container(
-                height: 130,
+                height: 140,
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                       colors: [AppColors.primary, AppColors.primaryDark]),
