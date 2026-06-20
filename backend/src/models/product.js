@@ -1,0 +1,20 @@
+const { DataTypes } = require('sequelize');
+module.exports = (sequelize) => sequelize.define('Product', {
+  id: { type: DataTypes.INTEGER.UNSIGNED, autoIncrement: true, primaryKey: true },
+  title: { type: DataTypes.STRING(180), allowNull: false },
+  slug: { type: DataTypes.STRING(200), unique: true },
+  brandId: { type: DataTypes.INTEGER.UNSIGNED, allowNull: false },
+  categoryId: { type: DataTypes.INTEGER.UNSIGNED, allowNull: false },
+  description: { type: DataTypes.TEXT },
+  price: { type: DataTypes.DECIMAL(10, 2), allowNull: false },
+  salePrice: { type: DataTypes.DECIMAL(10, 2) },
+  stockQty: { type: DataTypes.INTEGER.UNSIGNED, allowNull: false, defaultValue: 0 },
+  cpu: { type: DataTypes.STRING(80) },
+  ramGb: { type: DataTypes.SMALLINT.UNSIGNED },
+  storageGb: { type: DataTypes.SMALLINT.UNSIGNED },
+  screenSize: { type: DataTypes.DECIMAL(3, 1) },
+  ratingAvg: { type: DataTypes.DECIMAL(2, 1), defaultValue: 0.0 },
+  ratingCount: { type: DataTypes.INTEGER.UNSIGNED, defaultValue: 0 },
+  thumbnailUrl: { type: DataTypes.STRING(512) },
+  isFeatured: { type: DataTypes.BOOLEAN, defaultValue: false },
+}, { tableName: 'products' });

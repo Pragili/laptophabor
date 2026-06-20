@@ -1,0 +1,6 @@
+node_modules/
+.env
+# ignore runtime uploads but keep the generated seed imagery
+src/uploads/*
+!src/uploads/.gitkeep
+!src/uploads/laptop-*.png
